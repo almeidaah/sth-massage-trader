@@ -14,6 +14,10 @@ public class LoginService {
     private LoginRepository loginRepository;
 
     public Login findByEmailAndPassword(Login login){
-        return loginRepository.findByEmailAndPassword(login.getEmail(), login.getPassword());
+        return this.loginRepository.findByEmailAndPassword(login.getEmail(), login.getPassword());
+    }
+
+    public void save(Login login){
+        this.loginRepository.save(login);
     }
 }
