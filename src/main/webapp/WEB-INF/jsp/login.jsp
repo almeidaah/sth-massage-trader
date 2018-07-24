@@ -12,12 +12,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
+
 <head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <c:url value="/resources/css" var="cssPath" />
+    <link rel="stylesheet" href="${cssPath }/bootstrap.min.css">
+    <link rel="stylesheet" href="${cssPath }/bootstrap-theme.min.css">
     <title><spring:message code="message.login.title" /></title>
 </head>
+<%--<head>--%>
+    <%--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
+    <%--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>--%>
+    <%--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--%>
+<%--</head>--%>
 
 <tags:sthTemplate>
 

@@ -1,29 +1,17 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
 <head>
-<c:url value="/resources/css" var="cssPath" />
-<link rel="stylesheet" href="${cssPath }/bootstrap.min.css">
-<link rel="stylesheet" href="${cssPath }/bootstrap-theme.min.css">
+	<c:url value="/resources/css" var="cssPath" />
+	<link rel="stylesheet" href="${cssPath }/bootstrap.min.css">
+	<link rel="stylesheet" href="${cssPath }/bootstrap-theme.min.css">
 </head>
 
 <tags:sthTemplate>
 
-	<nav class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Massage Trader 1.0</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a style="color: red" href="/logout">Logout</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
 	<div class="container">
 
