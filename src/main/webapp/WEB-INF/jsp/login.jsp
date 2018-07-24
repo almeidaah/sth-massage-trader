@@ -19,11 +19,6 @@
     <link rel="stylesheet" href="${cssPath }/bootstrap-theme.min.css">
     <title><spring:message code="message.login.title" /></title>
 </head>
-<%--<head>--%>
-    <%--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
-    <%--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>--%>
-    <%--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>--%>
-<%--</head>--%>
 
 <tags:sthTemplate>
 
@@ -40,7 +35,7 @@
 
                     <form:form class="form-horizontal" action="/login" method="post" modelAttribute="login">
 
-                        <img src="resources/logo.png" class="img-fluid" width="100%" alt="Responsive image">
+                        <img src="https://suntech.com.br/wp-content/themes/photolab/images/brand-suntech.svg" class="img-fluid" width="100%" alt="Responsive image">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
