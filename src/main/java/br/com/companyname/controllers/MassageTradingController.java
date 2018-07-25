@@ -5,8 +5,6 @@ import br.com.companyname.model.Login;
 import br.com.companyname.model.Massage;
 import br.com.companyname.service.MassageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +17,6 @@ public class MassageTradingController {
 
     @Autowired
     private MassageService massageService;
-
-    @Autowired
-    private JavaMailSender mailSender;
 
     @GetMapping("/massageForm")
     public String massageForm(Map<String, Object> model) {
