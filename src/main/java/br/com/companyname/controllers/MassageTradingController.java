@@ -1,5 +1,6 @@
 package br.com.companyname.controllers;
 
+import br.com.companyname.configuration.MailUtil;
 import br.com.companyname.model.Login;
 import br.com.companyname.model.Massage;
 import br.com.companyname.service.MassageService;
@@ -119,17 +120,10 @@ public class MassageTradingController {
 
 
     private void sendConfirmationEmails(Massage myMassage, Massage massageToExchange) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(myMassage.getLogin().getEmail());
-        message.setSubject("Massage trader - Troca de massagem");
-        message.setText(String.format("Seu novo horário é : %s com %s. \nVocê trocou sua massagem com : %s", myMassage.getTime(), myMassage.getProfessional().toString() , massageToExchange.getLogin().getEmail()));
-        mailSender.send(message);
-
-        message = new SimpleMailMessage();
-        message.setTo(massageToExchange.getLogin().getEmail());
-        message.setSubject("Massage trader - Troca de massagem");
-        message.setText(String.format("Seu novo horário é : %s com %s. \nVocê trocou sua massagem com : %s", massageToExchange.getTime(), massageToExchange.getProfessional().toString(), myMassage.getLogin().getEmail()));
-        mailSender.send(message);
+        //A to B
+        MailUtil.sendMail(myMassage, massageToExchange.getLogin().getEmail());
+        //B to A
+        MailUtil.sendMail(massageToExchange, myMassage.getLogin().getEmail());
     }
 
 
