@@ -52,6 +52,7 @@ public class MassageController {
         massageService.remove(massage);
 
         model.put("username", login.getEmail());
+        model.put("myMassages", massageService.findAllByLogin(login));
         model.put("massages", massageService.list());
         model.put("message", "Massagem removida com sucesso");
         return "welcome";

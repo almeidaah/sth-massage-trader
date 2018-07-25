@@ -11,7 +11,6 @@ import java.io.IOException;
 public class MailUtil {
 
     public static void sendMail(Massage massage, String userChangedLogin) {
-
         Email from = new Email("sth-massage-trader@example.com");
         String emailTo = massage.getLogin().getEmail();
         Email to = new Email(emailTo);
