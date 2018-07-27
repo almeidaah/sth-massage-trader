@@ -11,6 +11,7 @@ public class ResetScheduling {
     @Autowired
     MassageService massageService;
 
+
     //friday 18 at brazil time (-3)
     @Scheduled(cron = "0 0 21 * * FRI")
     public void eraseData(){

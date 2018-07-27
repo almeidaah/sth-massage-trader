@@ -21,6 +21,7 @@ public class MassageTradingController {
 
     @Autowired
     private MassageService massageService;
+    
 
     @GetMapping("/massageForm")
     public String massageForm(Map<String, Object> model) {
