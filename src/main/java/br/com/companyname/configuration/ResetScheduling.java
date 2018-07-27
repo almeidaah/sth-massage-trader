@@ -19,7 +19,8 @@ public class ResetScheduling {
 //        massageService.findAll().forEach(massage -> massageService.remove(massage ));
 //    }
 
-    @Scheduled(cron = "0 0 20 * * FRI")
+    //friday 18 at brazil time (-3)
+    @Scheduled(cron = "0 0 21 * * FRI")
     public void eraseData(){
         System.out.println("#####ERASING ALL DATA#####");
         massageService.findAll().forEach(massage -> massageService.remove(massage ));
