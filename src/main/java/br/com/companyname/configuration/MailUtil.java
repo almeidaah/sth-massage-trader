@@ -10,6 +10,9 @@ import java.io.IOException;
 //@PropertySource()
 public class MailUtil {
 
+    @Value("${sendgrid.api.key}")
+    private static String sendGridKey;
+
     public static void sendMail(Massage massage, String userChangedLogin) {
         Email from = new Email("sth-massage-trader@example.com");
         String emailTo = massage.getLogin().getEmail();
@@ -21,7 +24,9 @@ public class MailUtil {
         Content content = new Content("text/plain", emailContent);
         Mail mail = new Mail(from, subject, to, content);
 
-        SendGrid sg = new SendGrid("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");
+        System.out.println("API KEY : " + sendGridKey);
+
+        SendGrid sg = new SendGrid(sendGridKey);
 
         Request request = new Request();
         try {
