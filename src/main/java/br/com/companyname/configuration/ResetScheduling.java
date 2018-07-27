@@ -11,14 +11,6 @@ public class ResetScheduling {
     @Autowired
     MassageService massageService;
 
-
-    //@Scheduled(cron = "0 0 * * SAT")
-//    @Scheduled(cron = "*/2 * * * *")
-//    void eraseData(){
-//        System.out.println("deleting all data :)");
-//        massageService.findAll().forEach(massage -> massageService.remove(massage ));
-//    }
-
     //friday 18 at brazil time (-3)
     @Scheduled(cron = "0 0 21 * * FRI")
     public void eraseData(){

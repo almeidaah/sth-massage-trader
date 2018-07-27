@@ -91,7 +91,6 @@ public class MassageTradingController {
         model.put("myMassages", massageService.findAllByLogin(login));
         model.put("massages", massageService.list());
         model.put("success", "Você trocou uma massagem com : " + myMassage.getLogin().getEmail() + "\n Um email foi enviado a vocês dois.");
-
         return "welcome";
     }
 

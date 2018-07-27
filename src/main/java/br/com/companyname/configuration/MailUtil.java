@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 
-public class MailUtil {
+public class MailUtil { 
 
     public static void sendMail(Massage massage, String userChangedLogin, String sendGridKey) {
         Email from = new Email("sth-massage-trader@example.com");
