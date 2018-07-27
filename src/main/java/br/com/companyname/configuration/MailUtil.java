@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 //@PropertySource()
+@Component
 public class MailUtil {
 
     @Value("${sendgrid.api.key}")
