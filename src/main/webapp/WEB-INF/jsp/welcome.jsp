@@ -73,8 +73,6 @@
 				</tr>
 
 				<c:forEach items="${massages}" var="massage">
-					<%--<c:forEach items="${myMassages}" var="myMassage">--%>
-
 					<tr>
 						<td><h4>${massage.time}</h4></td>
 						<td><h4>${massage.professional}</h4></td>
@@ -94,7 +92,6 @@
 							</c:choose>
 						</td>
 					</tr>
-						<%--</c:forEach>--%>
 				</c:forEach>
 			</table>
 
@@ -105,7 +102,7 @@
 		setInterval(
 			function () {
 				document.getElementById("btn-refresh-table").click();
-				},180000
+				},30000
 		);
 	</script>
 

@@ -41,16 +41,18 @@ public class WelcomeController {
 	}
 
 	@PostMapping("/login")
-	public String login(@Valid @ModelAttribute final Login login, final BindingResult result, final ModelMap model) {
+	public String login(@Valid @ModelAttribute final Login newUser, final BindingResult result, final ModelMap model) {
 
  		if(result.hasErrors()){
 			model.put("error", "Informe os campos corretamente");
 			return "login";
 		}
 
-		Login dbLogin = loginService.findByEmailAndPassword(login);
+		Login dbLogin = loginService.findByEmailAndPassword(newUser);
  		if(dbLogin != null){
-			setDefaultModelAttributes(model, login);
+			setDefaultModelAttributes(model, newUser);
+			model.put("login", dbLogin);
+
 			return "welcome";
 		}
 
@@ -64,12 +66,6 @@ public class WelcomeController {
 		model.put("login", null);
 		return index(model);
 	}
-
-	@GetMapping("/addUser")
-	public String addUser(Map<String, Object> model) {
-		return "addUser";
-	}
-
 
 
 }

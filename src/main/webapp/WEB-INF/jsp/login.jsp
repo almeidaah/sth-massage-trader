@@ -20,11 +20,20 @@
     <title><spring:message code="message.login.title" /></title>
 </head>
 
-<tags:sthTemplate>
+<style type="text/css">
+    body{
+        background: -moz-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #A6E9FF 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #f0f9ff 0%,#cbebff 47%,#A6E9FF 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(top, #f0f9ff 0%,#cbebff 47%,#A6E9FF 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+</style>
+
+<body>
 
     <div class="container">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info" >
+
                 <div class="panel-heading">
                     <div class="panel-title">Massage trader 1.0</div>
                 </div>
@@ -32,30 +41,27 @@
                 <c:set var = "error" scope = "session" value = ""/>
 
                 <div style="padding-top:30px" class="panel-body" >
-
                     <form:form class="form-horizontal" action="/login" method="post" modelAttribute="login">
 
                         <img src="https://suntech.com.br/wp-content/themes/photolab/images/brand-suntech.svg" class="img-fluid" width="100%" alt="Responsive image">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <form:input id="login-username" type="text" class="form-control" path="email" placeholder="email" />
+                            <form:input class="form-control" path="email" placeholder="email" />
                         </div>
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <form:input id="login-password" type="password" class="form-control" path="password" placeholder="password" />
+                            <form:password class="form-control" path="password" placeholder="password" />
                         </div>
 
                         <div style="margin-top:10px" class="form-group">
                             <div class="col-sm-12 controls">
                                 <td><input class="btn btn-success" type="submit" value="Submit"/></td>
-                                <%--<a class="btn btn-warning" href="/addUser">Cadastrar-me</a>--%>
                             </div>
                         </div>
 
                     </form:form>
-
                 </div>
 
                 <c:if test = "${error ne ''}">
@@ -63,7 +69,6 @@
                             ${error}
                     </div>
                 </c:if>
-
             </div>
 
             <a href="https://www.linkedin.com/in/oalmeidajavadeveloper/"> <span>made by Fernando Almeida</span></a>
@@ -72,4 +77,4 @@
 
     </div>
 
-</tags:sthTemplate>
+</body>

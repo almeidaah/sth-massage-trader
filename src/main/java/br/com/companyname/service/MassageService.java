@@ -20,27 +20,7 @@ public class MassageService {
 
     public List<Massage> list(){
         //Return only visible messages;
-        return massageRepository.findAll().stream().filter( f -> f.getVisible()).collect(toList());
-
-//        Massage m1 = new Massage();
-//        m1.setId("1");
-//        m1.setDetail("Massagem bacana!");
-//        m1.setProfessional(Massage.Professional.DIEGO);
-//        m1.setTime(LocalTime.now());
-//
-//        Massage m2 = new Massage();
-//        m2.setId("2");
-//        m2.setDetail("Massagem ruim!");
-//        m2.setProfessional(Massage.Professional.ANA);
-//        m2.setTime(LocalTime.now());
-//
-//        Massage m3 = new Massage();
-//        m3.setId("3");
-//        m3.setDetail("Massagem top!");
-//        m3.setProfessional(Massage.Professional.SAMA);
-//        m3.setTime(LocalTime.now());
-//
-//        return Arrays.asList(m1, m2, m3);
+        return massageRepository.findAll().stream().filter(Massage::getVisible).collect(toList());
     }
 
     @Transactional
@@ -50,22 +30,17 @@ public class MassageService {
 
     public Massage findUserMassage(Login login) {
         return massageRepository.findByLogin(login.getEmail());
-
     }
 
     public void remove(Massage m) {
         massageRepository.delete(m);
     }
 
-    public Massage findMassageById(String messageToExchangeId) {
-        return massageRepository.findOne(messageToExchangeId);
-    }
+    public Massage findMassageById(String messageToExchangeId) { return massageRepository.findOne(messageToExchangeId); }
 
     public List<Massage> findAllByLogin(Login login){
         return massageRepository.findAllByLogin(login.getEmail());
     }
 
-    public List<Massage> findAll() {
-        return massageRepository.findAll();
-    }
+    public List<Massage> findAll() { return massageRepository.findAll(); }
 }

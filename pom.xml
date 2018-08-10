@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>spring-boot-web-massage-trader</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>Spring Massage Trader</name>
 	<version>1.0</version>
 
@@ -23,14 +23,11 @@
 		<!-- Web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		
-		<!-- Web with Tomcat + Embed -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>compile</scope>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<!-- JSTL -->
@@ -45,8 +42,6 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Need this to compile JSP -->
 		<dependency>
 			<groupId>org.eclipse.jdt.core.compiler</groupId>
 			<artifactId>ecj</artifactId>
@@ -87,7 +82,7 @@
 			<version>2.6.0</version>
 		</dependency>
 
-		<!-- Lombok reduce boilerplate code -->
+		<!-- Lombok to reduce model boilerplate code -->
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -95,14 +90,6 @@
 			<version>1.18.0</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Email -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-			<version>1.4.3.RELEASE</version>
-		</dependency>
-
 
 	</dependencies>
 	<build>
