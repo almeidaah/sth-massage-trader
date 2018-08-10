@@ -1,19 +1,15 @@
 package br.com.companyname.configuration;
+import br.com.companyname.controllers.MassageTradingController;
 import br.com.companyname.model.Massage;
 import com.sendgrid.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-//@PropertySource()
 public class MailUtil {
 
-    @Value("${sendgrid.api.key}")
-    private static String sendGridKey;
 
-    public static void sendMail(Massage massage, String userChangedLogin) {
+    public static void sendMail(Massage massage, String userChangedLogin, String sendGridKey) {
         Email from = new Email("sth-massage-trader@example.com");
         String emailTo = massage.getLogin().getEmail();
         Email to = new Email(emailTo);

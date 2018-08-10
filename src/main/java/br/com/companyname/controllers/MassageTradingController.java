@@ -5,6 +5,7 @@ import br.com.companyname.model.Login;
 import br.com.companyname.model.Massage;
 import br.com.companyname.service.MassageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,12 @@ import java.util.Map;
 @SessionAttributes("login")
 public class MassageTradingController {
 
+    @Value("${sendgrid.api.key}")
+    public String sendGridKey;
+
     @Autowired
     private MassageService massageService;
+
 
     @GetMapping("/massageForm")
     public String massageForm(Map<String, Object> model) {
@@ -87,7 +92,6 @@ public class MassageTradingController {
         model.put("myMassages", massageService.findAllByLogin(login));
         model.put("massages", massageService.list());
         model.put("success", "Você trocou uma massagem com : " + myMassage.getLogin().getEmail() + "\n Um email foi enviado a vocês dois.");
-
         return "welcome";
     }
 
@@ -112,13 +116,11 @@ public class MassageTradingController {
         return "welcome";
     }
 
-
-
     private void sendConfirmationEmails(Massage myMassage, Massage massageToExchange) {
         //A to B
-        MailUtil.sendMail(myMassage, massageToExchange.getLogin().getEmail());
+        MailUtil.sendMail(myMassage, massageToExchange.getLogin().getEmail(), sendGridKey);
         //B to A
-        MailUtil.sendMail(massageToExchange, myMassage.getLogin().getEmail());
+        MailUtil.sendMail(massageToExchange, myMassage.getLogin().getEmail(), sendGridKey);
     }
 
 
