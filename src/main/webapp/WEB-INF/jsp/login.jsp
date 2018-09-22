@@ -43,7 +43,7 @@
                 <div style="padding-top:30px" class="panel-body" >
                     <form:form class="form-horizontal" action="/login" method="post" modelAttribute="login">
 
-                        <img src="https://suntech.com.br/wp-content/themes/photolab/images/brand-suntech.svg" class="img-fluid" width="100%" alt="Responsive image">
+                        <img src="https://img.clipartxtras.com/ef113ce4d7f31594850dae6992d1c6e8_home-massage-clipart-images_980-755.svg" class="img-fluid" width="100%" alt="Responsive image">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

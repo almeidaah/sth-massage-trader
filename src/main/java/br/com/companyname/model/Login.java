@@ -1,16 +1,12 @@
 package br.com.companyname.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Getter @Setter
-@NoArgsConstructor
+@Data
 public class Login {
 
     @Id

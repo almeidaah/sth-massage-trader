@@ -1,13 +1,15 @@
 package br.com.companyname.configuration;
-import br.com.companyname.controllers.MassageTradingController;
+
 import br.com.companyname.model.Massage;
 import com.sendgrid.*;
-import org.springframework.beans.factory.annotation.Value;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 
 public class MailUtil {
 
+    final static Log LOG = LogFactory.getLog(MailUtil.class);
 
     public static void sendMail(Massage massage, String userChangedLogin, String sendGridKey) {
         Email from = new Email("sth-massage-trader@example.com");
@@ -20,8 +22,6 @@ public class MailUtil {
         Content content = new Content("text/plain", emailContent);
         Mail mail = new Mail(from, subject, to, content);
 
-        System.out.println("API KEY : " + sendGridKey);
-
         SendGrid sg = new SendGrid(sendGridKey);
 
         Request request = new Request();
@@ -31,9 +31,9 @@ public class MailUtil {
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
             Response response = sg.api(request);
-            System.out.println(response.getStatusCode());
-            System.out.println(response.getBody());
-            System.out.println(response.getHeaders());
+
+            LOG.info(response.getStatusCode());
+            LOG.info(response.getBody());
         } catch (IOException ex) {
 
         }

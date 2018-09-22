@@ -1,8 +1,6 @@
 package br.com.companyname.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,13 +11,12 @@ import java.io.Serializable;
 import java.time.LocalTime;
 
 @Document
-@Getter @Setter
-@EqualsAndHashCode
+@Data
 public class Massage implements Serializable {
 
-	private static final long serialVersionUID = -1928015274485228566L;
+    private static final long serialVersionUID = -1928015274485228566L;
 
-	public enum Professional{
+    public enum Professional{
         DIEGO,
         SAMA,
         ANA,
